@@ -75,7 +75,7 @@ dim(training); dim(testing);
 Above are the dimensions of the newly created training and testing set.
 
 ###Creating the Model
-The first model fitted to the data was Random Forest. This was tried first as it was the method used in by Velloso et al., 2013 which was the original study. A number of settings were adjusted to decrease the processing time.
+The first model fitted to the data was Random Forest. This was tried first as it was the method used in by Velloso et al., 2013 which was the original study. A number of settings were adjusted to decrease the processing time, specifically within the trainControl options.
 ```{r process, cache = TRUE, eval = TRUE,echo=TRUE}
 library(parallel)
 library(doParallel)

@@ -179,7 +179,7 @@ dim(training); dim(testing);</code></pre>
 </div>
 <div id="creating-the-model" class="section level3">
 <h3>Creating the Model</h3>
-<p>The first model fitted to the data was Random Forest. This was tried first as it was the method used in by Velloso et al., 2013 which was the original study. A number of settings were adjusted to decrease the processing time.</p>
+<p>The first model fitted to the data was Random Forest. This was tried first as it was the method used in by Velloso et al., 2013 which was the original study. A number of settings were adjusted to decrease the processing time, specifically within the trainControl options.</p>
 <pre class="r"><code>library(parallel)
 library(doParallel)</code></pre>
 <pre><code>## Loading required package: foreach</code></pre>
