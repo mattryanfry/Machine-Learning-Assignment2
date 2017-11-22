@@ -88,6 +88,7 @@ model<-train(classe~.,method="rf",data=training,trcontrol=fitControl)
 model
 ```
 
+
 ###Cross Validating the Model
 The testing set created was used to cross validate the data and the accuracy achieved was 99%. So the first model created was sufficiently accurate to use on the assignment quiz.
 ```{r cross validation, cache = TRUE, eval = TRUE,echo=TRUE}
