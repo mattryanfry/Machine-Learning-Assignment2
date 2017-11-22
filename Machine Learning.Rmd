@@ -73,8 +73,9 @@ testing <- traindata3[-inTrain,]
 dim(training); dim(testing);
 ```
 Above are the dimensions of the newly created training and testing set.
+
 ###Creating the Model
-The first model fitted oto the data was Random Forest. This was tried first as it was the method used in by Velloso et al., 2013 in the original study.
+The first model fitted to the data was Random Forest. This was tried first as it was the method used in by Velloso et al., 2013 which was the original study. A number of settings were adjusted to decrease the processing time.
 ```{r process, cache = TRUE, eval = TRUE,echo=TRUE}
 library(parallel)
 library(doParallel)
@@ -86,13 +87,16 @@ model<-train(classe~.,method="rf",data=training,trcontrol=fitControl)
 ```{r model, cache = F, eval = TRUE,echo=TRUE}
 model
 ```
+
 ###Cross Validating the Model
+The testing set created was used to cross validate the data and the accuracy achieved was 99%. So the first model created was sufficiently accurate to use on the assignment quiz.
 ```{r cross validation, cache = TRUE, eval = TRUE,echo=TRUE}
 predictionCV<-predict(model,testing)
 confusionMatrix(predictionCV,testing$classe)
 ```
 
 ###Predicting Results for the Quiz Data
+The model used to predict the quiz outcomes, which were predicted with 100% accuracy.
 ```{r prediction }
 prediction<-predict(model,testdata3)
 ```
